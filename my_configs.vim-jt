@@ -1,0 +1,39 @@
+" https://github.com/powerline/fonts.git
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.sh,*.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" this is for python-mode
+autocmd FileType python setlocal nonumber
+let g:pymode_folding = 0
+let g:pymode_options_max_line_length = 119
+let g:pymode_python = 'python3'
+set completeopt=menu
+
+set foldcolumn=0
+
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+
+" this is for cpp/c
+"autocmd BufNewFile,BufRead *.h,*.c,*.cc,*.cpp set filetype=cpp
+au Filetype cpp setlocal tabstop=8 softtabstop=4 shiftwidth=4
+"au Filetype cpp setlocal expandtab
+
+"set mouse=a
+"set clipboard=unnamed
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+let g:shfmt_extra_args = '-i 2'
+let g:shfmt_fmt_on_save = 1
+
+"let g:go_version_warning = 0
+let g:go_metalinter_autosave = 1
